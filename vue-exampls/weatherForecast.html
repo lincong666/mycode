@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div>
+        <div></div>
+        <div>
+          <input
+            v-model="city"
+            type="text"
+            @keyup.enter="searchWeather"
+            placeholder="请输入查询的城市"
+          />
+          <button @click="searchWeather(city)">搜索</button>
+        </div>
+        <div>
+          <a href="javascript:;" @click="changeCity('北京')">北京</a>
+          <a href="javascript:;" @click="changeCity('上海')">上海</a>
+          <a href="javascript:;" @click="changeCity('广州')">广州</a>
+          <a href="javascript:;" @click="changeCity('深圳')">深圳</a>
+        </div>
+      </div>
+      <ul>
+        <li v-for="item in weatherList">
+          <div><span>{{item.type}}</span></div>
+          <div>
+            <b>最{{item.low}}</b>
+            ~
+            <b>最{{item.high}}</b>
+          </div>
+          <div><span>{{item.date}}</span></div>
+        </li>
+      </ul>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js\main.js"></script>
+  </body>
+</html>
