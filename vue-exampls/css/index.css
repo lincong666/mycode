@@ -176,7 +176,7 @@ dd {
   position: absolute;
   left: 73px;
   top: 60px;
-  z-index: 9;
+  z-index: 5;
 }
 .cover {
   position: absolute;
@@ -270,7 +270,7 @@ dd {
   animation-iteration-count: infinite;
   animation-play-state: paused;
   animation-timing-function: linear;
-  animation-duration: 5s;
+  animation-duration: 15s;/* 动画的旋转一圈持续的时间，可以认为是旋转速度 */
 }
 /* 是否正在播放 */
 .player_con.playing .disc,
