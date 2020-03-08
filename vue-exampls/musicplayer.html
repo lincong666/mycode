@@ -51,7 +51,7 @@
           <div class="comment_list">
             <dl v-for="item in hotComments">
               <dt><img :src="item.user.avatarUrl" alt="" /></dt>
-              <dd class="name">{{item.nickname}}</dd>
+              <dd class="name">{{item.user.nickname}}</dd>
               <!--用户名-->
               <dd class="detail">{{item.content}}</dd>
               <!--用户评论内容-->

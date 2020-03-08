@@ -61,26 +61,26 @@ var app = new Vue({
             },function(err){});
         },
         playMusic:function(musicId){
-            console.log(musicId);
+            // console.log(musicId);
             var that = this;
             //获取歌曲地址（根据歌曲id来获取）
             axios.get("https://autumnfish.cn/song/url?id="+musicId)
             .then(function(response){
                 // console.log(response);
-                console.log(response.data.data[0].url);
+                // console.log(response.data.data[0].url);
                 that.musicUrl = response.data.data[0].url;
             },function(err){});
             //获取歌曲详情
             axios.get("https://autumnfish.cn/song/detail?ids="+musicId)
             .then(function(response){
-                console.log(response.data.songs[0].al.picUrl);
+                // console.log(response.data.songs[0].al.picUrl);
                 that.musicCover=response.data.songs[0].al.picUrl;
             },function(err){});
             //获取歌曲相应的评论
             axios.get("https://autumnfish.cn/comment/hot?type=0&id="+musicId)
             .then(function(response){
                 // console.log(response);
-                console.log(response.data.hotComments);
+                console.log(response.data);
                 that.hotComments=response.data.hotComments;
             },function(err){})
         },
